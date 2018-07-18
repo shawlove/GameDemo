@@ -17,6 +17,7 @@ public class buttonClick0 : MonoBehaviour {
 
     public void Click()
     {
+        print("cccc");
         _lskills = lcontent.GetComponentsInChildren<skill>();
         _uskills = ucontent.GetComponentsInChildren<skill>();
         foreach (skill s in _lskills)
@@ -31,6 +32,7 @@ public class buttonClick0 : MonoBehaviour {
             if (s.Count == 1)
             {
                 skills.learnSkill(s.Id);
+
             }
         }
 

@@ -79,12 +79,14 @@ public class Drag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandl
             return;
         }
         goal = eventData.pointerCurrentRaycast.gameObject;
+        print(goal.name);
         if (goal!=null)
         {
             if (goal.name.Length>=5)
             {
                 if (goal.name.Substring(0, 5).Equals("BGrid"))
                 {
+                    print("检测到BGrid");
                     transform.SetParent(goal.transform, false);
                     transform.position = goal.transform.position;
                     transform.gameObject.tag = "BarSkill";
@@ -99,6 +101,7 @@ public class Drag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandl
                 }
                 else if (goal.name.Substring(0, 5).Equals("Skill"))
                 {
+                    print("检测到Skill");
                     Destroy(originalParent.GetChild(0).gameObject);
                     Transform t = goal.transform.parent;
                     goal.transform.SetParent(originalParent, false);
@@ -107,6 +110,7 @@ public class Drag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandl
                     transform.position = t.transform.position;
                     if (t.gameObject.name.Substring(0,5).Equals("BGrid"))
                     {
+                        
                         transform.gameObject.tag = "BarSkill";
                     }
                 }
@@ -121,6 +125,7 @@ public class Drag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandl
         }
         else
         {
+            print("检测到null");
             Destroy(this.gameObject);
         }
 

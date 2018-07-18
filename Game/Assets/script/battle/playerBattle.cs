@@ -38,18 +38,18 @@ public class playerBattle : MonoBehaviour {
         // paramter = GameObject.FindGameObjectWithTag("Player").GetComponent<fps_playerParamter>();
         //g = GameObject.FindGameObjectWithTag("teee");
         currntHp = maxHp;
-        enemy = GameObject.FindGameObjectsWithTag("Enemy");
         anim = GetComponent<Animator>();
         skillDamage = GameObject.FindGameObjectWithTag("Player").GetComponent<skillDamage>();
         blood = GameObject.FindGameObjectWithTag("Blood").GetComponent<RectTransform>();
         blue = GameObject.FindGameObjectWithTag("Blue").GetComponent<RectTransform>();
-        blood.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 3, 95);
-        blue.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,3,95);
+        blood.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, 100);
+        blue.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left,0,100);
     }
 	
 	
 	void Update () {
-        blood.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 3, 95*currntHp/maxHp);
+        blood.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, currntHp);
+        enemy = GameObject.FindGameObjectsWithTag("Enemy");
         // blue.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 3, 95);
     }
 

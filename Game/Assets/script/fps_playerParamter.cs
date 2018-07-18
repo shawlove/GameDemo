@@ -34,6 +34,11 @@ public class fps_playerParamter : MonoBehaviour {
     public bool isSkillbar04;
     [HideInInspector]
     public bool isSkillbar05;
+    [HideInInspector]
+    public bool isTrade=false;
+    [HideInInspector]
+    public int money = 500;
+
 
 
 

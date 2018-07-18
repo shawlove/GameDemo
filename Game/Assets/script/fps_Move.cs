@@ -5,15 +5,15 @@ using System.Collections;
 public class fps_Move : MonoBehaviour {
     public float sprintSpeed = 20f;
     public float moveSpeed=10f;
-    public float jumpSpeed = 4f;
-    public float jumpHeight = 20;
-    public float gravity = 10f;
+   // public float jumpSpeed = 4f;
+    //public float jumpHeight = 20;
+    public float gravity = 9.8f;
     public float rotationSensitivity = 5f;
     public float backSpeed = 3f;
     private CharacterController characterController;
     private fps_playerParamter parameter;
     private Vector3 moveDirection=Vector3.zero;
-    private int val=3;
+   // private int val=3;
 
     void Start()
     {
@@ -29,35 +29,38 @@ public class fps_Move : MonoBehaviour {
     private void move()
     {
         getMoveVector();
-        
-        if (characterController.isGrounded)
+        if (!characterController.isGrounded)
         {
-            if (parameter.inputJump )
-            {
-                val = 0;
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+            /* if (characterController.isGrounded)
+             {
+                 if (parameter.inputJump )
+                 {
+                     val = 0;
+                 }
+                 characterController.Move(moveDirection);
             }
-            characterController.Move(moveDirection);
-       }
-        else
-        {
-          
-            if (val == 0)
-            {
-                moveDirection.y += jumpSpeed * Time.deltaTime;
-            }
-            else
-            {
-                moveDirection.y -= gravity * Time.deltaTime;
-            }
-            if(transform.localPosition.y > jumpHeight)
-            {
-                val = 1;
-            }
-            
+             else
+             {
+
+                 if (val == 0)
+                 {
+                     moveDirection.y += jumpSpeed * Time.deltaTime;
+                 }
+                 else
+                 {
+                     moveDirection.y -= gravity * Time.deltaTime;
+                 }
+                 if(transform.localPosition.y > jumpHeight)
+                 {
+                     val = 1;
+                 }*/
+
             characterController.Move(moveDirection);
         }
         
-    }
 
 
     private void getMoveVector()

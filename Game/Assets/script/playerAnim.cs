@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class playerAnim : MonoBehaviour {
 
-   
+    public GameObject bar1;
+    public GameObject bar2;
+    public GameObject bar3;
+    public GameObject bar4;
     private fps_playerParamter paramter;
     private  Animator anim;
     private float random;
@@ -49,87 +52,87 @@ public class playerAnim : MonoBehaviour {
     private void skillBarDown()
     {
         skillBars = GameObject.FindGameObjectsWithTag("skillBar");
-        if (paramter.isSkillbar01)
+        if (paramter.isSkillbar01&&bar1.transform.childCount!=0)
         {
-            skillState = skillBars[0].GetComponentInChildren<skill>().SkillState;
-            if (cooling.ContainsKey(skillBars[0].GetComponentInChildren<skill>().Id))
+            skillState = bar1.GetComponentInChildren<skill>().SkillState;
+            if (cooling.ContainsKey(bar1.GetComponentInChildren<skill>().Id))
             {
-                if (cools[skillBars[0].GetComponentInChildren<skill>().Id]>=skillBars[0].GetComponentInChildren<skill>().CoolTime)
+                if (cools[bar1.GetComponentInChildren<skill>().Id]>= bar1.GetComponentInChildren<skill>().CoolTime)
                 {
                     anim.SetInteger("skill", skillState);
                     
-                    cools[skillBars[0].GetComponentInChildren<skill>().Id] = 0;
+                    cools[bar1.GetComponentInChildren<skill>().Id] = 0;
                 }
             }
             else
             {
                 anim.SetInteger("skill", skillState);
-                cooling[skillBars[0].GetComponentInChildren<skill>().Id] = skillBars[0].GetComponentInChildren<skill>().CoolTime;
-                cools[skillBars[0].GetComponentInChildren<skill>().Id] = 0;
+                cooling[bar1.GetComponentInChildren<skill>().Id] = bar1.GetComponentInChildren<skill>().CoolTime;
+                cools[bar1.GetComponentInChildren<skill>().Id] = 0;
                 //skillBars[0].GetComponentInChildren<Image>().color = new Color(194/255,194/255,194/255);
             }
             
         }
-        if (paramter.isSkillbar02)
+        if (paramter.isSkillbar02&&bar2.transform.childCount != 0)
         {
-            skillState = skillBars[1].GetComponentInChildren<skill>().SkillState;
-            anim.SetInteger("skill", skillState);
-            if (cooling.ContainsKey(skillBars[1].GetComponentInChildren<skill>().Id))
+            skillState = bar2.GetComponentInChildren<skill>().SkillState;
+            //anim.SetInteger("skill", skillState);
+            if (cooling.ContainsKey(bar2.GetComponentInChildren<skill>().Id))
             {
-                if (cools[skillBars[1].GetComponentInChildren<skill>().Id] >= skillBars[1].GetComponentInChildren<skill>().CoolTime)
+                if (cools[bar2.GetComponentInChildren<skill>().Id] >= bar2.GetComponentInChildren<skill>().CoolTime)
                 {
                     anim.SetInteger("skill", skillState);
 
-                    cools[skillBars[1].GetComponentInChildren<skill>().Id] = 0;
+                    cools[bar2.GetComponentInChildren<skill>().Id] = 0;
                 }
             }
             else
             {
                 anim.SetInteger("skill", skillState);
-                cooling[skillBars[1].GetComponentInChildren<skill>().Id] = skillBars[1].GetComponentInChildren<skill>().CoolTime;
-                cools[skillBars[1].GetComponentInChildren<skill>().Id] = 0;
+                cooling[bar2.GetComponentInChildren<skill>().Id] = bar2.GetComponentInChildren<skill>().CoolTime;
+                cools[bar2.GetComponentInChildren<skill>().Id] = 0;
                 //skillBars[1].GetComponentInChildren<Image>().color = new Color(194 / 255, 194 / 255, 194 / 255);
             }
         }
-        if (paramter.isSkillbar03)
+        if (paramter.isSkillbar03 && bar3.transform.childCount != 0)
         {
-            skillState = skillBars[2].GetComponentInChildren<skill>().SkillState;
-            anim.SetInteger("skill", skillState);
-            if (cooling.ContainsKey(skillBars[2].GetComponentInChildren<skill>().Id))
+            skillState = bar3.GetComponentInChildren<skill>().SkillState;
+            //anim.SetInteger("skill", skillState);
+            if (cooling.ContainsKey(bar3.GetComponentInChildren<skill>().Id))
             {
-                if (cools[skillBars[2].GetComponentInChildren<skill>().Id] >= skillBars[2].GetComponentInChildren<skill>().CoolTime)
+                if (cools[bar3.GetComponentInChildren<skill>().Id] >= bar3.GetComponentInChildren<skill>().CoolTime)
                 {
                     anim.SetInteger("skill", skillState);
 
-                    cools[skillBars[2].GetComponentInChildren<skill>().Id] = 0;
+                    cools[bar3.GetComponentInChildren<skill>().Id] = 0;
                 }
             }
             else
             {
                 anim.SetInteger("skill", skillState);
-                cooling[skillBars[2].GetComponentInChildren<skill>().Id] = skillBars[2].GetComponentInChildren<skill>().CoolTime;
-                cools[skillBars[2].GetComponentInChildren<skill>().Id] = 0;
+                cooling[bar3.GetComponentInChildren<skill>().Id] = bar3.GetComponentInChildren<skill>().CoolTime;
+                cools[bar3.GetComponentInChildren<skill>().Id] = 0;
                // skillBars[2].GetComponentInChildren<Image>().color = new Color(194 / 255, 194 / 255, 194 / 255);
             }
         }
-        if (paramter.isSkillbar04)
+        if (paramter.isSkillbar04 && bar4.transform.childCount != 0)
         {
-            skillState = skillBars[3].GetComponentInChildren<skill>().SkillState;
-            anim.SetInteger("skill", skillState);
-            if (cooling.ContainsKey(skillBars[3].GetComponentInChildren<skill>().Id))
+            skillState = bar4.GetComponentInChildren<skill>().SkillState;
+            //anim.SetInteger("skill", skillState);
+            if (cooling.ContainsKey(bar4.GetComponentInChildren<skill>().Id))
             {
-                if (cools[skillBars[3].GetComponentInChildren<skill>().Id] >= skillBars[3].GetComponentInChildren<skill>().CoolTime)
+                if (cools[bar4.GetComponentInChildren<skill>().Id] >= bar4.GetComponentInChildren<skill>().CoolTime)
                 {
                     anim.SetInteger("skill", skillState);
 
-                    cools[skillBars[3].GetComponentInChildren<skill>().Id] = 0;
+                    cools[bar4.GetComponentInChildren<skill>().Id] = 0;
                 }
             }
             else
             {
                 anim.SetInteger("skill", skillState);
-                cooling[skillBars[3].GetComponentInChildren<skill>().Id] = skillBars[3].GetComponentInChildren<skill>().CoolTime;
-                cools[skillBars[3].GetComponentInChildren<skill>().Id] = 0;
+                cooling[bar4.GetComponentInChildren<skill>().Id] = bar4.GetComponentInChildren<skill>().CoolTime;
+                cools[bar4.GetComponentInChildren<skill>().Id] = 0;
                // skillBars[3].GetComponentInChildren<Image>().color = new Color(194 / 255, 194 / 255, 194 / 255);
             }
         }

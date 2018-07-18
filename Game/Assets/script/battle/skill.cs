@@ -143,18 +143,18 @@ public class skill : MonoBehaviour {
             
             text.text = description;
             count++;
-            image.color = Color.green;
+            _image.color = Color.green;
             foreach (skill s in _lskills)
             {
                 if (transform.parent.parent == ucontent.transform && s.count == 1)
                 {
                     s.count--;
-                    s.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    s.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 }
                 if (transform.parent.parent == lcontent.transform && s.count == 1 && s.id != id)
                 {
                     s.count--;
-                    s.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    s.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 }
             }
             foreach (skill s in _uskills)
@@ -162,12 +162,12 @@ public class skill : MonoBehaviour {
                 if (transform.parent.parent == lcontent.transform&&s.count==1)
                 {
                     s.count--;
-                    s.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    s.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 }
                 if (transform.parent.parent==ucontent.transform&&s.count==1&&s.id!=id)
                 {
                     s.count--;
-                    s.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                    s.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 }
             }
 
@@ -176,7 +176,7 @@ public class skill : MonoBehaviour {
         {
             text.text = "";
             count--;
-            image.color = new Color(1,1,1,1);
+            _image.color = new Color(1,1,1,1);
         }
         
     }

@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class SkillInterface : MonoBehaviour {
     public GameObject gird;
     public GameObject obj;
+    public GameObject _skillInterface;
     private GameObject prefab;
     private GameObject prefabGird;
-    private  CanvasRenderer[] renderer;
+    //private  CanvasRenderer[] renderer;
     private  CanvasRenderer[] r1;
     private  CanvasRenderer[] r2;
     private GameObject[] r3;
@@ -26,13 +27,13 @@ public class SkillInterface : MonoBehaviour {
 
     void Start()
     {
-        renderer= this.GetComponentsInChildren<CanvasRenderer>();
+       // renderer= this.GetComponentsInChildren<CanvasRenderer>();
         paramter = GameObject.FindGameObjectWithTag("Player").GetComponent<fps_playerParamter>();
         skill = GameObject.FindGameObjectWithTag("GameController").GetComponent<skillDamage>();
         lcontent = GameObject.FindGameObjectWithTag("learnedSkills");
         ucontent = GameObject.FindGameObjectWithTag("unlearnedSkills");
-        r1 = lcontent.GetComponentsInChildren<CanvasRenderer>();
-        r2=ucontent.GetComponentsInChildren<CanvasRenderer>();
+       // r1 = lcontent.GetComponentsInChildren<CanvasRenderer>();
+        //r2=ucontent.GetComponentsInChildren<CanvasRenderer>();
     }
     void Update()
     {
@@ -41,11 +42,19 @@ public class SkillInterface : MonoBehaviour {
 
      private void  skillInterface()
     {
-        r3 = GameObject.FindGameObjectsWithTag("skill");
-        r4 = GameObject.FindGameObjectsWithTag("Grid");
+       // r3 = GameObject.FindGameObjectsWithTag("skill");
+       // r4 = GameObject.FindGameObjectsWithTag("Grid");
         if (paramter.isSkillInterface)
         {
-            
+            _skillInterface.SetActive(true);
+        }else
+        {
+            _skillInterface.SetActive(false);
+        }
+        /*
+        if (paramter.isSkillInterface)
+        {
+            GetComponent<Canvas>().sortingOrder = 1;
             foreach (CanvasRenderer r in renderer)
             {
                 r.SetAlpha(1);
@@ -69,6 +78,7 @@ public class SkillInterface : MonoBehaviour {
         }
         else
         {
+            GetComponent<Canvas>().sortingOrder = 0;
             foreach (CanvasRenderer r in renderer)
             {
                 r.SetAlpha(0);
@@ -90,7 +100,7 @@ public class SkillInterface : MonoBehaviour {
                 g.GetComponent<CanvasRenderer>().SetAlpha(0);
             }
         }
-
+        */
         _lskills = lcontent.GetComponentsInChildren<skill>();
         _uskills = ucontent.GetComponentsInChildren<skill>();
 

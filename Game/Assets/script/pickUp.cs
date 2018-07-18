@@ -27,7 +27,7 @@ public class pickUp : MonoBehaviour {
         {
             Debug.Log("拾取到了");
             //    播放音效
-            item.addBagItem(Id);
+            gameItem.addBagItem(Id);
             Destroy(this.gameObject);
         }
     }

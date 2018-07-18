@@ -19,6 +19,8 @@ public class skillDamage : MonoBehaviour {
 
     public Dictionary<int,_skill> learnedSkill = new Dictionary<int,_skill>();
 
+
+
     void Start()
     {
         //learnedSkill.Add(0, new _skill { _name = "", damage = 0, id = 0, description = "", sprite = null });

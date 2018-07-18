@@ -36,6 +36,8 @@ public class fps_input : MonoBehaviour {
                 AddButton("SkillBar03", KeyCode.Alpha3);
                 AddButton("SkillBar04", KeyCode.Alpha4);
                 AddButton("SkillBar05", KeyCode.Alpha5);
+                AddButton("F",KeyCode.F);
+                AddButton("Esc",KeyCode.Escape);
             }
         }
         if (type == "" || type == "axis")

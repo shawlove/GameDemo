@@ -46,6 +46,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\script\Tags.cs" />
+     <Compile Include="Assets\script\bag\Trader.cs" />
+     <Compile Include="Assets\script\bag\buyButton.cs" />
+     <Compile Include="Assets\script\bag\gameItem.cs" />
+     <Compile Include="Assets\script\bag\item.cs" />
+     <Compile Include="Assets\script\bag\playerBag.cs" />
+     <Compile Include="Assets\script\bag\sellButton.cs" />
+     <Compile Include="Assets\script\bag\throwButton.cs" />
      <Compile Include="Assets\script\battle\Drag.cs" />
      <Compile Include="Assets\script\battle\SkillInterface.cs" />
      <Compile Include="Assets\script\battle\enemy.cs" />
@@ -59,11 +66,14 @@
      <Compile Include="Assets\script\fps_camera.cs" />
      <Compile Include="Assets\script\fps_input.cs" />
      <Compile Include="Assets\script\fps_playerParamter.cs" />
-     <Compile Include="Assets\script\gameItem.cs" />
-     <Compile Include="Assets\script\item.cs" />
+     <Compile Include="Assets\script\loadScene\fristSceneTool.cs" />
+     <Compile Include="Assets\script\loadScene\globalObject.cs" />
+     <Compile Include="Assets\script\loadScene\loadScene.cs" />
+     <Compile Include="Assets\script\loadScene\sceneController.cs" />
+     <Compile Include="Assets\script\loadScene\startScenetool.cs" />
+     <Compile Include="Assets\script\loadScene\toOtherPlace.cs" />
      <Compile Include="Assets\script\pickUp.cs" />
      <Compile Include="Assets\script\playerAnim.cs" />
-     <Compile Include="Assets\script\playerBag.cs" />
      <None Include="Assets\MagicProjectiles - ReadMe.txt" />
      <None Include="Assets\Resources\prefab\model\enemy\444.txt" />
  <Reference Include="UnityEngine.UI">

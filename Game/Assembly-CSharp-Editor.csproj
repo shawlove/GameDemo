@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B6F66379-48ED-E6F0-58A7-323F528128C8}</ProjectGuid>
+    <ProjectGuid>{196F3426-96BD-E564-A156-57572DB80A48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,13 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\KunaiEditor\Editor\KunaiEditor.cs" />
-     <None Include="Assets\NatureStarterKit2\info.txt" />
-     <None Include="Assets\AliceStyleCharacter\Script\333.txt" />
+     <Compile Include="Assets\MLM Loading Screens Addon\Scripts\Editor\LoadingScreenInspector.cs" />
+     <Compile Include="Assets\MLM Loading Screens Addon\Scripts\Editor\LoadingScreenMenu.cs" />
      <None Include="Assets\MagicProjectiles - ReadMe.txt" />
-     <None Include="Assets\KunaiEditor\Editor\Readme.txt" />
-     <None Include="Assets\InfinityScrollView\Editor\BaseObject\readme.txt" />
-     <None Include="Assets\model\enemy\444.txt" />
+     <None Include="Assets\MLM Loading Screens Addon\Fonts\ChunkFive\ChunkFive.txt" />
+     <None Include="Assets\MLM Loading Screens Addon\Fonts\ChunkFive\SIL Open Font License.txt" />
+     <None Include="Assets\MLM Loading Screens Addon\README.txt" />
+     <None Include="Assets\MLM Loading Screens Addon\Fonts\Titillium\SIL Open Font License.txt" />
+     <None Include="Assets\MLM Loading Screens Addon\Fonts\Titillium\Titillium Bitmap Font.txt" />
+     <None Include="Assets\Resources\prefab\model\enemy\444.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/unity5.4.5/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -85,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{07A5FA7F-FA10-642D-A96F-A6B4D1EC306F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -37,7 +37,6 @@ public class buttonClik : MonoBehaviour {
                 print("不能忘记未学习技能");
             }
         }
-        print("click");
         anim.SetTrigger("Highlighted");
 
     }

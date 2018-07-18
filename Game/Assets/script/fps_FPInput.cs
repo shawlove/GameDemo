@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class fps_FPInput : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class fps_FPInput : MonoBehaviour {
     private fps_input input;
     private Animator anim;
     private playerBattle battle;
+    private int cInterface = 0;
+    private int cBag = 0;
 
     void Start()
     {
@@ -29,6 +32,10 @@ public class fps_FPInput : MonoBehaviour {
     }
     void Update()
     {
+        if (SceneManager.GetActiveScene().name=="StartScene")
+        {
+            LockCursor = false;
+        }
         InitialInput();
     }
 
@@ -41,20 +48,69 @@ public class fps_FPInput : MonoBehaviour {
         paramter.inputJump = input.GetButton("Jump");
         paramter.inputAttack01 = input.GetButton("Attack01");
         paramter.inputAttack02 = input.GetButton("Attack02");
+        //paramter.F = input.GetButtonDown("F");
+        /*if (input.GetButtonDown("F"))
+        {
+            paramter.F = true;
+            if (cBag == 1)
+            {
+                cBag--;
+                paramter.isBagOpen = false;
+            }
+            if (cInterface == 1)
+            {
+                cInterface--;
+                paramter.isSkillInterface = false;
+            }
+        }
+        else
+        {
+            paramter.F = false;
+        }*/
         paramter.isBattle = battle.isBattle;
         paramter.currentHP = battle.CurrntHp;
-        paramter.isSkillInterface = input.GetButton("SkillInterface");
+        if (input.GetButtonDown("SkillInterface") && cInterface == 0)
+        {
+            if (cBag == 1)
+            {
+                cBag--;
+                paramter.isBagOpen = false;
+            }
+            cInterface++;
+            paramter.isSkillInterface = true;
+        }
+        else if (input.GetButtonDown("SkillInterface") && cInterface == 1)
+        {
+            cInterface--;
+            paramter.isSkillInterface = false;
+        }
+        if (input.GetButtonDown("BagOpen") && cBag == 0)
+        {
+            if (cInterface == 1)
+            {
+                cInterface--;
+                paramter.isSkillInterface = false;
+            }
+            cBag++;
+            paramter.isBagOpen = true;
+        }
+        else if (input.GetButtonDown("BagOpen") && cBag == 1)
+        {
+            cBag--;
+            paramter.isBagOpen = false;
+        }
+        //paramter.isBagOpen = input.GetButton("BagOpen");
+        //paramter.isSkillInterface = input.GetButton("SkillInterface");
         paramter.isSkillbar01 = input.GetButton("SkillBar01");
         paramter.isSkillbar02 = input.GetButton("SkillBar02");
         paramter.isSkillbar03 = input.GetButton("SkillBar03");
         paramter.isSkillbar04 = input.GetButton("SkillBar04");
         paramter.isSkillbar05 = input.GetButton("SkillBar05");
-        paramter.isBagOpen = input.GetButton("BagOpen");
-        if (paramter.isBagOpen||paramter.isSkillInterface)
+        if (paramter.isBagOpen||paramter.isSkillInterface||paramter.isTrade)
         {
             LockCursor = false;
             paramter.inputSmoothLook = Vector2.zero;
-        }else
+        }else if(SceneManager.GetActiveScene().name != "StartScene")
         {
             LockCursor = true;
         }
@@ -64,4 +120,6 @@ public class fps_FPInput : MonoBehaviour {
 
         }
     }
+
+
 }
